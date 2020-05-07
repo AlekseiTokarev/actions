@@ -13,7 +13,7 @@ object ActionAppTest {
 
     @Test
     fun `Adding 1 and 2 should be equal to 3`() {
-        Assertions.assertEquals(1 + 2, 5)
+        Assertions.assertEquals(1 + 2, 3)
     }
 }
 
