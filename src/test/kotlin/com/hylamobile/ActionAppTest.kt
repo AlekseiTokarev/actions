@@ -1,6 +1,5 @@
 package com.hylamobile
 
-import com.fasterxml.jackson.databind.ObjectMapper
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 
@@ -9,7 +8,7 @@ object ActionAppTest {
 
     @Test
     fun `Adding 1 and 3 should be equal to 4`() {
-        Assertions.assertEquals(1 + 3, 5)
+        Assertions.assertEquals(1 + 3, 4)
     }
 
     @Test
@@ -18,15 +17,10 @@ object ActionAppTest {
     }
 
     @Test
-    fun parseJson() {
-        val json = "{\n" +
-                "\"isDefault\": false,\n" +
-                "\"hardStop\": false,\n" +
-                "\"hasSecondaryReason\": false,\n" +
-                "\"nextQuestion\": null\n" +
-                "}";
-        val parsedJson = ObjectMapper().readValue(json, Map::class.java)
-        print(ObjectMapper().writeValueAsString(parsedJson));
+    fun `join string`() {
+        val joinToString = listOf(2, 3).joinToString("\n", "[", "]")
+        Assertions.assertEquals(joinToString, """[2
+            3]""".trimIndent())
     }
 }
 
